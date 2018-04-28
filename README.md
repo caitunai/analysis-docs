@@ -20,6 +20,8 @@
 
 ## Headers
 
+> Accept: application/json
+
 > Content-Type: application/json
 
 > Authorization: Bearer `<Your Access Token>`
@@ -79,6 +81,7 @@ var options = {
     method: 'POST',
     url: 'https://data.caitun.com/api/bot/reports',
     headers: {
+        Accept: 'application/json',
         Authorization: 'Bearer <Your Access Token>',
         'Content-Type': 'application/json'
     },
@@ -109,6 +112,7 @@ var client = new RestClient("https://data.caitun.com/api/bot/reports");
 var request = new RestRequest(Method.POST);
 request.AddHeader("Authorization", "Bearer <Your Access Token>");
 request.AddHeader("Content-Type", "application/json");
+request.AddHeader("Accept", "application/json");
 request.AddParameter("", "{\"skill\": \"nWA5W\", \"intent\": \"Launch\", \"platform\": \"xiaomi\", \"user_id\": \"dev022\", \"slots\": {\"Number\": \"100\", \"Name\": \"张三\"}}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
@@ -122,6 +126,7 @@ $request->setUrl('https://data.caitun.com/api/bot/reports');
 $request->setMethod(HTTP_METH_POST);
 
 $request->setHeaders(array(
+  'Accept' => 'application/json',
   'Authorization' => 'Bearer <Your Access Token>',
   'Content-Type' => 'application/json'
 ));
@@ -148,6 +153,7 @@ Request request = new Request.Builder()
   .url("https://data.caitun.com/api/bot/reports")
   .post(body)
   .addHeader("Content-Type", "application/json")
+  .addHeader("Accept", "application/json")
   .addHeader("Authorization", "Bearer <Your Access Token>")
   .build();
 
@@ -164,6 +170,7 @@ url = "https://data.caitun.com/api/bot/reports"
 payload = "{\"skill\": \"nWA5W\", \"intent\": \"Launch\", \"platform\": \"xiaomi\", \"user_id\": \"dev022\", \"slots\": {\"Number\": \"100\", \"Name\": \"张三\"}}"
 headers = {
     'Content-Type': "application/json",
+    'Accept': "application/json",
     'Authorization': "Bearer <Your Access Token>"
 }
 
@@ -192,6 +199,7 @@ func main() {
     req, _ := http.NewRequest("POST", url, payload)
 
     req.Header.Add("Content-Type", "application/json")
+    req.Header.Add("Accept", "application/json")
     req.Header.Add("Authorization", "Bearer <Your Access Token>")
 
     res, _ := http.DefaultClient.Do(req)
@@ -216,6 +224,7 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
+request["Accept"] = 'application/json'
 request["Authorization"] = 'Bearer <Your Access Token>'
 request.body = "{\"skill\": \"nWA5W\", \"intent\": \"Launch\", \"platform\": \"xiaomi\", \"user_id\": \"dev022\", \"slots\": {\"Number\": \"100\", \"Name\": \"张三\"}}"
 
@@ -229,6 +238,7 @@ import Foundation
 
 let headers = [
   "Content-Type": "application/json",
+  "Accept": "application/json",
   "Authorization": "Bearer <Your Access Token>"
 ]
 let parameters = [
